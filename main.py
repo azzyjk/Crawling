@@ -1,15 +1,22 @@
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
-import ssl
+from func import *
 
-context = ssl._create_unverified_context()
+menu()
+choose = int(input("Select number : "))
 
-html = urlopen(
-    "http://www.myashley.co.kr/Menu/SaladBar/Menu08.aspx", context=context)
-bsObject = BeautifulSoup(html, "html.parser")
-parseImg = bsObject.find("div", class_="season_sp").find_all("img")
+# context = makeCont()
+# menu = urlopen(wSite, context=context)
+# bsObject = BeautifulSoup(menu, "html.parser")
+# parseImg = bsObject.find("div", class_="season_sp").find_all("img")
+# print(parseImg)
 
-cnt = 1
-for menu in parseImg:
-    print(cnt," : ", menu.get('alt'))
-    cnt+=1
+# parseImg = menuFind(wSite)
+# showMenu(parseImg)
+
+if(choose == 1):
+    html, classType = menuType("classic")
+    parseImg = menuFind(html, classType)
+elif(choose == 2):
+    html, classType = menuType("w")
+    parseImg = menuFind(html, classType)
+
+showMenu(parseImg)
