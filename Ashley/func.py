@@ -15,7 +15,9 @@ def makeCont():
 def menuFind(html, classType):
     context = makeCont()
     menu = urlopen(html, context=context)
-    bsObject = BeautifulSoup(menu, "html.parser")
+    source = menu.read()
+    menu.close()
+    bsObject = BeautifulSoup(source, "html.parser")
     parseImg = bsObject.find("div", class_=classType).find_all("img")
     return parseImg
 
