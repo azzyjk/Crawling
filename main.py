@@ -1,22 +1,23 @@
 from func import *
 
-menu()
-choose = int(input("Select number : "))
+# menu()
+# choose = int(input("Select number : "))
 
-# context = makeCont()
-# menu = urlopen(wSite, context=context)
-# bsObject = BeautifulSoup(menu, "html.parser")
-# parseImg = bsObject.find("div", class_="season_sp").find_all("img")
-# print(parseImg)
+html, classType = menuType("classic")
 
-# parseImg = menuFind(wSite)
+print(html)
+print(classType)
+print("##########################")
+
+context = makeCont()
+menu = urlopen(html, context=context)
+bsObject = BeautifulSoup(menu, "html.parser")
+parseImg = bsObject.find_all("img")
+# print(bsObject)
+print(parseImg)
 # showMenu(parseImg)
-
-if(choose == 1):
-    html, classType = menuType("classic")
-    parseImg = menuFind(html, classType)
-elif(choose == 2):
-    html, classType = menuType("w")
-    parseImg = menuFind(html, classType)
-
-showMenu(parseImg)
+# cnt = 1
+# for menu in parseImg:
+#     print("###############################################")
+#     print(cnt, " : ", menu.get("ul"))
+#     cnt+=1
