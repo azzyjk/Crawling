@@ -6,13 +6,8 @@ site = "http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&brdGubun=12&ncvContSe
 
 page = requests.get(site)
 bsObject = BeautifulSoup(page.text, "html.parser")
-# parseNews = bsObject.body.select("div.data_table.midd")
-parse = bsObject.find_all('td')
-# print(bsObject.prettify())
-# print(parseNews)
-print(parse)
+parseLoc = bsObject.find_all('td')
 
-# cnt = 1
-# for article in parseNews:
-#     print(cnt, " : ", article.get_text().strip())
-#     cnt+=1
+parseLoc = str(parseLoc).replace("<td>","").replace("</td>","\n")
+
+print(parseLoc)
