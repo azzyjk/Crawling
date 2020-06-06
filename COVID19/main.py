@@ -14,8 +14,6 @@ strCOVID = replaceTag(str(infoCOVID))
 strLists = strCOVID.split('\n')
 COIVDlists = []
 
-# print(strLists[3].find("서울"))
-
 for data in strLists:
     checkLoc(COIVDlists, str(data))
 
