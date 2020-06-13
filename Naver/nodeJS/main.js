@@ -1,7 +1,6 @@
 const request = require("request");
 const cheerio = require("cheerio");
 const iconv = require("iconv-lite");
-const log = console.log;
 
 var url = "https://news.naver.com/";
 
