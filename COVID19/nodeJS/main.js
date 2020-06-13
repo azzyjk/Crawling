@@ -14,6 +14,6 @@ request(
   function (err, resp, body) {
     body = iconv.decode(body, "utf-8");
     const $ = cheerio.load(body);
-    console.log($("div").text());
+    console.log($("div.box_line2 table.midsize.big tbody").text());
   }
 );
