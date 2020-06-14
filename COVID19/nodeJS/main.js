@@ -21,7 +21,28 @@ const getHtml = async () => {
 };
 
 getHtml().then((html) => {
+  var tdList = [];
+  var COVIDLoc = [];
+  var now = 0;
   const $ = cheerio.load(html);
-  const $text = $("div.box_line2 table.midsize.big tbody").text();
-  console.log($text);
+  const $tbodyList = $("div.box_line2 table.midsize.big tbody tr td");
+
+  $tbodyList.each(function (i, element) {
+    tdList[i] = $(this)
+      .text()
+      .replace(/\(/g, "\n")
+      .replace(/\)/g, "")
+      .split("\n");
+  });
+
+  for (var i = 2; i < tdList.length; i += 5) {
+    COVIDLoc[now] = {
+      name: tdList[i][0],
+      location: tdList[i][1],
+      date: tdList[i + 1][0],
+    };
+
+    now++;
+  }
+  console.log(COVIDLoc);
 });

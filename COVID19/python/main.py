@@ -17,4 +17,6 @@ COIVDlists = []
 for data in strLists:
     checkLoc(COIVDlists, str(data))
 
-print(COIVDlists)
+# print(COIVDlists)
+# print(strCOVID)
+print(strLists)
