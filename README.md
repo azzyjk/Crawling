@@ -1,7 +1,7 @@
 # 크롤링
 
 다음부터는 안에있는 코드이다.
-
+아래는 NodeJS로 크롤링을 해주었다.
 ```javascript
 var express = require("express"); 
 const axios = require("axios"); //Url로 GET 요청한 후 데이터를 받아오기 위한 모듈
