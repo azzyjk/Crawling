@@ -1,5 +1,9 @@
 # 크롤링
 
+## 사용언어
+  >*Python3.7
+  >*NodeJS
+  
 다음부터는 안에있는 코드이다.
 아래는 NodeJS로 크롤링을 해주었다.
 ```javascript
